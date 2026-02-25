@@ -1,16 +1,19 @@
-package PACKAGE_NAME;
-
 public class Gimnasio {
+
     private String codigo;
     private String nombre;
-    private Socio[] listaSocios = new Socio[12];
-    private Sala[] listaSalas = new Sala[6];
+    private Socio[] listaSocios;
+    private Sala[] listaSalas;
     private int responsableId = -1;
 
+    private final int SOCIOS_MAX =12;
+    private final int SALAS_MAX =6;
 
     public Gimnasio(String codigo, String nombre) {
         this.codigo = codigo;
         this.nombre = nombre;
+        listaSalas = new Sala[SALAS_MAX];
+        listaSocios = new Socio[SOCIOS_MAX];
     }
 
     public boolean registrarSocio(Socio s){
